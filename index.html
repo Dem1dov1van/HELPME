@@ -8,107 +8,134 @@
     <link rel="stylesheet" href="./main.css">
 </head>
 
-<body>
-    <div class="wrapper">
-        <header class="head">
-            <div class="head__logo logo">
-                <a class="logo__img" href="#indexhtml"><img src="./images/logo.png" alt=""></a>
-            </div>
-            <div class="head__navigation navigation">
-                <ul class="navigation__navlist navlist">
-                    <li class="navlist__item">About</li>
-                    <li class="navlist__item">Help</li>
-                    <li class="navlist__item">Features</li>
-                </ul>
-            </div>
-            <div class="head__button">Sign Up</div>
-        </header>
-        <!-- Чекай БЭМ хэдера -->
-        <div class="title">
-            <h1>
-                Features
-            </h1>
-            <div class='title__desc desc'>
-                Some of the features and advantages that we provide for those of you who store data in this Data
-                Warehouse.
-            </div>
+
+<body class="body">
+    <header class="body__header header">
+        <div class="header__logo logo">
+            <a class="logo__img" href="#indexhtml"><img src="./images/logo.png" alt=""></a>
         </div>
-        <!-- Честно, хз как это надо было назвать, но остановился на title -->
-<!-- Тут тоже хз. Вроде в макете слайдер, но как это реализовать в классах? Может так? -->
-        <div class="slider">
-            <div class="slider__big-number big-number">
-                1
-            </div>
-            <div class="slider__content content">
-                <h3 class="content__title title">
-                    First Features
-                </h3>
-                <p class="content__excerpt excerpt">
-                    Little Red Cap opened her eyes and when she saw the sunbeams dancing to and fro through the
-                    trees and how the ground was covered with beautiful flowers.
-                </p>
-                <a href="#" class="content__more-link more-link">
-                    Learn more
-                </a>
-            <div class="big-number">
-                2
-            </div>
-            <div class="content">
-                <h3 class="content__title title">
-                    First Features
-                </h3>
-                <p class="content__excerpt excerpt">
-                    Little Red Cap opened her eyes and when she saw the sunbeams dancing to and fro through the
-                    trees and how the ground was covered with beautiful flowers.
-                </p>
-                <a href="#" class="content__more-link more-link">
-                    Learn more
-                </a>
-                <!-- <div class="text_wrap">
-                    <h3>
-                        Second Features
-                    </h3>
-                    <p>
-                        Each time she picked one she thought that she could see an even more beautiful one a little way
-                        off, and she ran after it, going further and further into the woods.
-                    </p>
-                </div>
-            </div> -->
-            <!-- <div class="big_number">
-                2
-            </div>
-            <div class="content">
-                <div class="text_wrap">
-                    <h3>
-                        Second Features
-                    </h3>
-                    <p>
-                        Each time she picked one she thought that she could see an even more beautiful one a little way
-                        off, and she ran after it, going further and further into the woods.
-                    </p>
-                </div> -->
-            <button class="content__btn-control btn-control">
-                prev/nextslide
-                <!-- Хз как это реализовать в html но это переключатель слайдов. Тут потом псевдоэлементами делается,
-                     а prevnextslide скрывает за областью просмотра -->
-            </button>
+        <nav class="header__navigation navigation">
+            <ul class="navigation__navlist navlist">
+                <li class="navlist__item">
+                    <a href="#" class="navlist__link">
+                        About
+                    </a>
+                </li>
+                <li class="navlist__item">Help</li>
+                <li class="navlist__item">Features</li>
+            </ul>
+        </nav>
+        <a href="#" class="header__main-button main-button">Sign Up</a>
+    </header>
+
+    <!--    
+        Header хорошо сделан по БЭМ'У, чувствуется прогресс.
+        - Не обязательно wrapper добавлять, тем более он пустой (я удалил его)
+
+        - Я обычно от body иду по БЭМ'у, мне кажется так удобнее
+
+        - Навигацию правильнее в тег <nav> обернуть
+
+        - на ссылке class="logo__img" он не подходит, потому что img это картинка, нужно class="logo__link",
+        link это ссылка
+
+        - About, Help, Features - это ссылки должны быть. Первый элемент наавигации я обернул, остальные по аналогии 
+
+        - Sign Up - это кнопка, а ты сделал тегом div, класс верный, тег нет. 
+        Я сделал тегом <a>, потому что по клику мы должны провалиться в личный кабинет, 
+        т.е. кнопка ссылается на другую страницу, поэтому тег <a>, а не <button>, <div>
+
+        - кнопку Sign Up, следует сделать так же блоком, потому что она может повторяться на странице. 
+        Пример class="main-button" 
+
+        - и ещё нужен container после header'a ))))
+        =================================================================================================================
+    -->
+
+
+    <!-- Заголовок, параграф, и слайдер это следующая секция, 
+        к примеру section-offer => дальше container.
+        - класс title нужно весить на h1
+        - class="desc" это параграф поэтому <p>
+    -->
+    <section class="body__section-offer section-offer">
+        <div class="section-offer__container container">
+            <!-- Оффер, в нём будет лежать заголовок и слайдер
+                - class="section-offer__offer" это не ошибка БЭМ, так принята 
+                не учитывать container
+            -->
+            <div class="section-offer__offer offer">
+                <h1 class="offer__title">Features</h1>
+                <p class="offer__paragraph">Some of the features and advantages that we provide for those of you who store data in this Data
+                    Warehouse.</p>
             </div>
 
+            <!-- Со слайдером твоим я чуть-чуть запутался, видно что БЭМ есть.
+                - class="big-number", нужно сделать <p> или <span>
+            
+                А так с ним всё просто:
+                1) Есть обёртка class="slider"
+                2) В ней два слайда class="slider__item"
+                3) И в каждом слайде заголовок, параграф, ссылка и номер
+            -->
+            <div class="section-offer__slider slider">
+                <div class="slider__item">
+                    <h2 class="slider__title">First Features</h2>
+                    <p class="slider__paragraph">Little Red Cap opened her eyes and when she saw the sunbeams dancing to</p>
+                    <a href="#" class="slider__more-link more-link">
+                        Learn more
+                    </a>
+                    <p class="slider__number">1</p>
+                </div>
+
+                <div class="slider__item">
+                    <h2 class="slider__title">Second Features</h2>
+                    <p class="slider__paragraph">Little Red Cap opened her eyes and when she saw the sunbeams dancing to</p>
+                    <a href="#" class="slider__more-link more-link">
+                        Learn more
+                    </a>
+                    <p class="slider__number">2</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+        
+
+
+    
+
+
+
+
+
+
+
+
+
 <!-- 
     Вопрос? как выстраивать вёрстку в смысле "сложности" элементов, их иерарии. сча объясню: допустим делаю footer 
     и все его дочерние элементы  дивы(высокоуровневые вроде), чтоюы не было на одном уровни дива и простой ссылки(н/р)
- Как здесь, img на уровне с дивами -->
+    Как здесь, img на уровне с дивами 
+    ===========================
+    (   Тут как раз БЭМ должен работать на тебя, вот если ты до этого не понимал зачем это всё нужно, 
+        то посмотри внимательно на левую часть шапки и левую часть футера, они повторяются там есть логотип и меню, 
+        а так как по БЭМ мы их(логотип и меню) определили как блоки то их можно переиспользовать в футере.
+        Я не буду редактировать футер попробуй сам, а я потом посмотрю, тут почувствуешь силу БЭМ. 
+    )-->
+
+
+
     <footer class="footer">
         <img src="./images/logo.png" alt="logo" class="footer__logo--white">
         <div class="footer__info info">
-            <!-- Да я понимаю, что инфо - слишком общий класс, какой сюда посоветуешь? -->
+
+            <!-- Да я понимаю, что инфо - слишком общий класс, какой сюда посоветуешь? (Да, норм вроде. Пока не вижу проблем)-->
             <a class="info__link" href="">About Us</a> 
             <a class="info__link" href=""> Privacy policy </a>
-            <!-- где семантично вернее писать класс перед href или после?
-            Не стал делать блоком, тк думаю отдельно она не будет использоваться -->
+            <!-- где семантично вернее писать класс перед href или после => (Значение не имеет, как хочешь, но принято href вначале, потому что так удобнее читать, а на семантику не влияет)?
+            Не стал делать блоком, тк думаю отдельно она не будет использоваться => (Ок, можно) -->
         </div>
+
         <form class="footer__subscribe-form subscribe-form">
             <!-- А, а, как тебе?  Сюбсрайб-форм(Сам придумал))) 
             Смотри, эту конструкцию инпута в параграфе я не сам придумал, думаю, она неплохая, но возможно ли так
@@ -119,6 +146,7 @@
             </p>
             <p class="subscribe-form__btn"><button type="submit">Sign Up Now</button></p>
         </form>
+
         <!-- <form>
             <div class="signUp">
                 <div>
