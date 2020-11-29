@@ -9,48 +9,46 @@
 </head>
 
 <body class="body">
+
     <header class="body__header header">
-        <div class="header__logo logo">
-            <a class="logo__link" href="#indexhtml">
-                <img src="./images/logo.png" alt="">
-            </a>
+        <div class="header__contain contain">
+            <div class="header__logo logo">
+                <a class="logo__link" href="#indexhtml">
+                    <img src="./images/logo.png" alt="">
+                </a>
+            </div>
+            <nav class="head__navigation navigation">
+                <ul class="navigation__navlist navlist">
+                    <li class="navlist__item">
+                        <a href="" class="navlist__link">
+                            About
+                        </a>
+                    </li>
+                    <li class="navlist__item">
+                        <a href="" class="navlist__link">
+                            Help
+                        </a></li>
+                    <li class="navlist__item">
+                        <a href="" class="navlist__link">
+                            Features
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <a href="" class="head__main-button main-button">Sign Up</a>
         </div>
-        <nav class="head__navigation navigation">
-            <ul class="navigation__navlist navlist">
-                <li class="navlist__item">
-                    <a href="" class="navlist__link">
-                        About
-                    </a>
-                </li>
-                <li class="navlist__item">
-                    <a href="" class="navlist__link">
-                        Help
-                    </a></li>
-                <li class="navlist__item">
-                    <a href="" class="navlist__link">
-                        Features
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <a href="" class="head__button button">Sign Up</a>
     </header>
-    <!-- Почему ты дал классу последней ссылки(Sign Up) класс .main-button?(здесь я не стал его присваивать)
-        (Потому что сай может разрастись и потом появится ещё одна кнопка secondary-button, поэтому main-button. Хз, привык к этому)
-    -->
     <section class="body__section-offer section-offer">
         <div class="section-offer__container container">
-            <!-- Для каких целей этот контейнер? ( Отцентровать контент по середине страницы ) -->
             <div class="section-offer__offer offer">
-                <!-- у h1 не хватает класса элемента и не нужно класть <p> в <h1> если нужна обертка то лучше <div class="offer__wrapper">-->
-                <h1 class="title">
+                <h1 class="offer__title title">
                     Features
-                    <p class='title__desc desc'>
-                        Some of the features and advantages that we provide for those of you who store data in this Data
-                        Warehouse.
-                    </p>
+                </h1>
+                <p class='title__desc desc'>
+                    Some of the features and advantages that we provide for those of you who store data in this Data
+                    Warehouse.
+                </p>
             </div>
-
             <div class="section-offer__slider slider">
                 <div class="slider__item">
                     <h2 class="slider__title">First Features</h2>
@@ -61,19 +59,27 @@
                     <a href="" class="Slider__more-link more-link">Learn more</a>
                     <p class="slider__number">1</p>
                 </div>
+                <div class="slider__item">
+                    <h2 class="slider__title">First Features</h2>
+                    <p class="slider__paragraph">
+                        Little Red Cap opened her eyes and when she saw the sunbeams dancing to and fro through the
+                        trees and how the ground was covered with beautiful flowers.
+                    </p>
+                    <a href="" class="Slider__more-link more-link">Learn more</a>
+                    <p class="slider__number">2</p>
+                </div>
                 <!-- Смотри, в slider есть slider__item с блоком item, а дальше мы игнорируем его и отталкиваемся от slider'а(а не от item'а)
                 Негласное правило?
                 (В слайдере нет блока item)
                 -->
-                <button class="slider__btn-control btn-control">
-                    prev/nextslide
+                <!-- <button class="slider__btn-control btn-control">
+                    prev/nextslide -->
                     <!-- Хз как это реализовать в html но это переключатель слайдов. Тут потом псевдоэлементами делается,
                      а prevnextslide скрывает за областью просмотра
                      (На макете нет кнопок переключения слайдов )
                     -->
                 </button>
             </div>
-
         </div>
     </section>
     <footer class="body__footer footer">
@@ -84,36 +90,36 @@
         Оставил как в шапке, чтоб по БЭМу. Также использвал модификатор, так как картинка белая.
         Сегодня прочитал, что модификаторы лучше исрользовать такие, чтобы при изменении стилистики не нужно
         было его переписывать, может поставить модификатор: .foooter--logo/ .footerstyle--logo -->
-        <div class="footer__logo logo logo--white">
-            <a class="logo__link" href="#indexhtml"><img src="./images/logo.png" alt=""></a>
-        </div>
+        <div class="footer__contain contain">
+            <div class="footer__logo logo logo--white">
+                <a class="logo__link" href="#indexhtml"><img src="./images/logo.png" alt=""></a>
+            </div>
+            <nav class="footer__navigation navigation">
+                <ul class="navigation__navlist navlist">
+                    <li class="navlist__item">
+                        <a href="" class="navlist__link">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="navlist__item">
+                        <a href="" class="navlist__link">
+                            Privacy policy
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <form class="footer__subscribe-form subscribe-form">
+                    <input class="subscribe-form__input" placeholder="Enter Your Email" type="text" name="email">
+                <button type="submit" class="subscribe-form__button main-button main-button--yellow">
+                    Sign Up Now
+                </button>
+            </form>
+        </div>  
+
   
          <!-- <img src="./images/logo.png" alt="logo" class="footer__logo logo logo--white"> -->
 
-        <nav class="footer__navigation navigation">
-            <ul class="navigation__navlist navlist">
-                <li class="navlist__item">
-                    <a href="" class="navlist__link">
-                        About Us
-                    </a>
-                </li>
-                <li class="navlist__item">
-                    <a href="" class="navlist__link">
-                        Privacy policy
-                    </a>
-                </li>
-            </ul>
-        </nav>
-        <!-- Не нужно input оборачивать в <p> и кнопка class="subscribe-form__btn" должна наследоваться из шапки
-            ведь они похожи, только цвет разный для этого юзай модификатор  -->
-        <form class="footer__subscribe-form subscribe-form">
-            <p class="subscribe-form__input">
-                <input placeholder="Enter Your Email" type="text" name="email">
-            </p>
-            <button type="submit" class="subscribe-form__btn">
-                Sign Up Now
-            </button>
-        </form>
+        
     </footer>
 
 </body>
