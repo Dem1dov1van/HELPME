@@ -11,7 +11,9 @@
 <body class="body">
     <header class="body__header header">
         <div class="header__logo logo">
-            <a class="logo__link" href="#indexhtml"><img src="./images/logo.png" alt=""></a>
+            <a class="logo__link" href="#indexhtml">
+                <img src="./images/logo.png" alt="">
+            </a>
         </div>
         <nav class="head__navigation navigation">
             <ul class="navigation__navlist navlist">
@@ -33,11 +35,14 @@
         </nav>
         <a href="" class="head__button button">Sign Up</a>
     </header>
-    <!-- Почему ты дал классу последней ссылки(Sign Up) класс .main-button?(здесь я не стал его присваивать) -->
+    <!-- Почему ты дал классу последней ссылки(Sign Up) класс .main-button?(здесь я не стал его присваивать)
+        (Потому что сай может разрастись и потом появится ещё одна кнопка secondary-button, поэтому main-button. Хз, привык к этому)
+    -->
     <section class="body__section-offer section-offer">
         <div class="section-offer__container container">
-            <!-- Для каких целей этот контейнер? -->
+            <!-- Для каких целей этот контейнер? ( Отцентровать контент по середине страницы ) -->
             <div class="section-offer__offer offer">
+                <!-- у h1 не хватает класса элемента и не нужно класть <p> в <h1> если нужна обертка то лучше <div class="offer__wrapper">-->
                 <h1 class="title">
                     Features
                     <p class='title__desc desc'>
@@ -45,6 +50,7 @@
                         Warehouse.
                     </p>
             </div>
+
             <div class="section-offer__slider slider">
                 <div class="slider__item">
                     <h2 class="slider__title">First Features</h2>
@@ -56,18 +62,24 @@
                     <p class="slider__number">1</p>
                 </div>
                 <!-- Смотри, в slider есть slider__item с блоком item, а дальше мы игнорируем его и отталкиваемся от slider'а(а не от item'а)
-                Негласное правило? -->
+                Негласное правило?
+                (В слайдере нет блока item)
+                -->
                 <button class="slider__btn-control btn-control">
                     prev/nextslide
                     <!-- Хз как это реализовать в html но это переключатель слайдов. Тут потом псевдоэлементами делается,
-                     а prevnextslide скрывает за областью просмотра -->
+                     а prevnextslide скрывает за областью просмотра
+                     (На макете нет кнопок переключения слайдов )
+                    -->
                 </button>
             </div>
+
         </div>
     </section>
     <footer class="body__footer footer">
         <!-- Здесь неплохо бы контейнер тоже пихнуть: на макете header и footer имеют одинаковую ширину и отступы,
-         или это марджинами задаётся? -->
+         или это марджинами задаётся? 
+         (Да контейнер тоже нужен) -->
          <!-- Дальше: два варианта оформления. Не знаю почему, но сделано было по-разному в шапке и подвале 
         Оставил как в шапке, чтоб по БЭМу. Также использвал модификатор, так как картинка белая.
         Сегодня прочитал, что модификаторы лучше исрользовать такие, чтобы при изменении стилистики не нужно
@@ -92,6 +104,8 @@
                 </li>
             </ul>
         </nav>
+        <!-- Не нужно input оборачивать в <p> и кнопка class="subscribe-form__btn" должна наследоваться из шапки
+            ведь они похожи, только цвет разный для этого юзай модификатор  -->
         <form class="footer__subscribe-form subscribe-form">
             <p class="subscribe-form__input">
                 <input placeholder="Enter Your Email" type="text" name="email">
