@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./clider.css">
+    <link rel="stylesheet" href="./dropmenu.css">
+
 </head>
 
 <body class="body">
@@ -24,10 +27,21 @@
                             About
                         </a>
                     </li>
-                    <li class="navlist__item">
-                        <a href="" class="navlist__link">
-                            Help
-                        </a></li>
+
+                    <li class="navlist__item ">
+                        <div class="item__dropdown dropdown">
+                            <a class="navlist__link dropdown__toggle">Help</a>
+                            <div class="dropdown__drawer drawer">
+                                <ul class="drawer__menu menu">
+                                    <li><a href="">User guide</a></li>
+                                    <li><a href="">Contact support</a></li>
+
+                                </ul>
+                                <div class="rectangle"></div>
+                            </div>
+                    
+                        </div>
+                    </li>    
                     <li class="navlist__item">
                         <a href="" class="navlist__link">
                             Features
@@ -50,49 +64,52 @@
                 </p>
             </div>
             <div class="section-offer__slider slider">
-                <div class="slider__item">
-                    <h2 class="slider__title">First Features</h2>
-                    <p class="slider__paragraph">
+                <div class="slider__item item">
+                    <div class="item__is-new is-new">new</div>
+                    <h2 class="item__title">First Features</h2>
+                    <p class="item__paragraph">
                         Little Red Cap opened her eyes and when she saw the sunbeams dancing to and fro through the
                         trees and how the ground was covered with beautiful flowers.
                     </p>
-                    <a href="" class="Slider__more-link more-link">Learn more</a>
-                    <p class="slider__number">1</p>
+                    <a href="" class="item__more-link more-link">Learn more</a>
+                    <p class="item__number">1</p>
                 </div>
-                <div class="slider__item">
-                    <h2 class="slider__title">First Features</h2>
-                    <p class="slider__paragraph">
-                        Little Red Cap opened her eyes and when she saw the sunbeams dancing to and fro through the
-                        trees and how the ground was covered with beautiful flowers.
+                <div class="slider__item item">
+                    <div class="item__is-new is-new">new</div>
+
+                    <h2 class="item__title">Second Feature</h2>
+                    <p class="item__paragraph">
+                        Each time she picked one she thought that she could see an even more beautiful one a little way off, and she ran after it, going further and further into the woods.
                     </p>
-                    <a href="" class="Slider__more-link more-link">Learn more</a>
-                    <p class="slider__number">2</p>
+                    <a href="" class="item__more-link more-link">Learn more</a>
+                    <p class="item__number">2</p>
                 </div>
-                <!-- Смотри, в slider есть slider__item с блоком item, а дальше мы игнорируем его и отталкиваемся от slider'а(а не от item'а)
-                Негласное правило?
-                (В слайдере нет блока item)
-                -->
-                <!-- <button class="slider__btn-control btn-control">
-                    prev/nextslide -->
-                    <!-- Хз как это реализовать в html но это переключатель слайдов. Тут потом псевдоэлементами делается,
-                     а prevnextslide скрывает за областью просмотра
-                     (На макете нет кнопок переключения слайдов )
-                    -->
-                </button>
+                <div class="slider__item item">
+                    <div class="item__is-new is-new">new</div>
+                    <h2 class="item__title">Third Feature</h2>
+                    <p class="item__paragraph">
+                        The wolf pressed the latch, and the door opened. He stepped inside, went straight to the grandmother's bed, and ate her up.
+                    </p>
+                    <a href="" class="item__more-link more-link">Learn more</a>
+                    <p class="item__number">3</p>
+                </div>
+                <div class="slider__item item">
+                    <div class="item__is-new is-new">new</div>
+                    <h2 class="item__title">Fourth Feature</h2>
+                    <p class="item__paragraph">
+                        Little Red Cap had run after the flowers. After she had gathered so many that she could not carry any more, she remembered her grandmother.
+                    </p>
+                    <a href="" class="item__more-link more-link">Learn more</a>
+                    <p class="item__number">4</p>
+                </div>
             </div>
         </div>
     </section>
     <footer class="body__footer footer">
-        <!-- Здесь неплохо бы контейнер тоже пихнуть: на макете header и footer имеют одинаковую ширину и отступы,
-         или это марджинами задаётся? 
-         (Да контейнер тоже нужен) -->
-         <!-- Дальше: два варианта оформления. Не знаю почему, но сделано было по-разному в шапке и подвале 
-        Оставил как в шапке, чтоб по БЭМу. Также использвал модификатор, так как картинка белая.
-        Сегодня прочитал, что модификаторы лучше исрользовать такие, чтобы при изменении стилистики не нужно
-        было его переписывать, может поставить модификатор: .foooter--logo/ .footerstyle--logo -->
+
         <div class="footer__contain contain">
             <div class="footer__logo logo logo--white">
-                <a class="logo__link" href="#indexhtml"><img src="./images/logo.png" alt=""></a>
+                <a class="logo__link" href="#indexhtml"><img src="./images/logo-white.png" alt=""></a>
             </div>
             <nav class="footer__navigation navigation">
                 <ul class="navigation__navlist navlist">
@@ -109,18 +126,55 @@
                 </ul>
             </nav>
             <form class="footer__subscribe-form subscribe-form">
-                    <input class="subscribe-form__input" placeholder="Enter Your Email" type="text" name="email">
+                <input class="subscribe-form__input" placeholder="Enter Your Email" type="text" name="email">
                 <button type="submit" class="subscribe-form__button main-button main-button--yellow">
                     Sign Up Now
                 </button>
             </form>
-        </div>  
+        </div>
 
-  
-         <!-- <img src="./images/logo.png" alt="logo" class="footer__logo logo logo--white"> -->
 
-        
+        <!-- <img src="./images/logo.png" alt="logo" class="footer__logo logo logo--white"> -->
+
+
     </footer>
+
+    <!-- script for dropmenu -->
+    <script>
+        (function(){
+            let toggle = document.querySelector('.dropdown__toggle')
+            toggle.addEventListener('click', function(event){
+                event.preventDefault
+            let dropdown = event.target.parentNode
+            dropdown.classList.toggle('is-open')
+            })
+        }())
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
+    <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
+
+
+    <script type="text/javascript">
+        $('.slider').slick({
+            infinite: false,
+            slidesToShow: 1.8,
+            slidesToScroll: 2.2,
+            // arrows: true,
+            dots: true,
+            responsive: [
+                {
+                    breakpoint: 992,
+                    settings: {
+                        slidesToShow: 0.8,
+                        slidesToScroll: 1.22,
+                    }
+
+                }
+            ]
+        });
+    </script>
 
 </body>
 
