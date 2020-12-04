@@ -1,0 +1,61 @@
+.dropdown{
+    position: relative;
+}
+
+.dropdown__toggle{
+    padding-right: 1em;
+}
+
+.dropdown__toggle::after{
+    content: url("./images/arrow-small-down.png");
+    position: absolute;
+    left: 2.5em;
+
+}
+
+.drawer{
+    display: none;
+    position: absolute;
+    top: 1.9em
+}
+
+.dropdown.is-open .drawer{
+    display: block;
+}
+
+.dropdown.is-open .dropdown__toggle::after{
+    content: url("./images/arrow-small-up.png");
+}
+
+.menu {
+    list-style: none;
+    border: 1px solid #9C69E2;
+    width: 150px;
+    border-radius: 1em;
+}
+
+
+.menu li>a {
+    padding: .5em 1em;
+    text-decoration: none;
+    display: block;
+}
+
+.menu li>a:hover{
+    color:#9C69E2;
+}
+.drawer__menu li+li{
+    margin: 0;
+}
+
+.rectangle {
+    width: 10px;
+    height: 10px;
+    border: 1px solid  #9C69E2;
+    position: relative;
+    top: -81px;
+    left: 45px;
+    transform: rotate(45deg);
+    background-color: white;
+    border-color: #9C69E2  transparent transparent #9C69E2;
+}
