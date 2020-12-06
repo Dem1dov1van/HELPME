@@ -32,6 +32,7 @@
     line-height: 28.8px;
     font-size: 18px;
     color: black;
+    display: block;
 }
 
 .head__navigation{
@@ -39,7 +40,49 @@
     margin-top: .5em;
 }
 
-.contain{
+
+
+.navlist__item{
+    padding-bottom: .4em;
+    padding-right: 1em;
+}
+
+.navlist__item:hover{
+    color: #9C69E2;
+}
+
+
+
+.navlist__item--dropdown:hover .dropdown__drawer{
+    display: block;
+    /* color: black; */
+}
+.navlist__link--dropdown:hover::after{
+    content: url("./images/arrow-small-up.png") !important;
+    position: absolute;
+    left: 2.5em;
+}
+
+
+.menu__item{
+    display: block;
+    padding: .5em;
+}
+
+
+.navlist__link--dropdown::after{
+    content: url("./images/arrow-small-down.png");
+    position: absolute;
+
+    top: -0.1em;
+    left: 2.5em;
+}
+
+.header__toggle{
+    display: none;
+}
+
+.container{
     display: flex;
     margin: 1em 6em;
 }
@@ -49,14 +92,35 @@
     list-style: none;
 }
 
-.navlist li+li{
+.navlist > li+li{
     margin-left: 4em;
+}
+
+.menu {
+    list-style: none;
+    border: 1px solid #9C69E2;
+    width: 150px;
+    border-radius: 1em;
+}
+.rectangle {
+    width: 10px;
+    height: 10px;
+    border: 1px solid  #9C69E2;
+    position: relative;
+    top: -81px;
+    left: 45px;
+    transform: rotate(45deg);
+    background-color: white;
+    border-color: #9C69E2  transparent transparent #9C69E2;
 }
 
 .head__main-button{
     margin-left: auto;
     margin-top: .5em;
     color: white;
+    position: absolute;
+    top: .7em;
+    right: 6em;
 }
 
 .main-button{
@@ -64,6 +128,8 @@
     border-radius: 50px;
     padding: 1em 2em;
     cursor: pointer;
+    
+
 }
 
 .header .main-button:hover{
@@ -71,10 +137,11 @@
     background-color: #B17FF4;
     ;
 }
-
-
-.container{
-    padding: 0 7em;
+/* section */
+.section-offer__container{
+    padding: 0 auto;
+    display: block;
+    margin: 0;
 }
 .body__section-offer{
     margin: 2em auto 0;
@@ -141,4 +208,135 @@
 
 .main-button--yellow:hover{
 background: #FFBE2D;
+}
+
+@media(max-width: 992px){
+    .container{
+        margin-left:  1em;
+    }
+
+    .head__navigation{
+        display: none;
+    }
+    .dropdown__toggle{
+        left: 35em;
+        display: block;       
+    }
+
+    .head__main-button{
+        display: none;
+        position: relative;
+        left: calc(50% - 100px);
+        width: fit-content;
+        top: 0em;
+        margin: 0;
+
+    }
+    .main-button.is-visible{
+        display: block;
+    }
+    .header__toggle{
+        display: block;
+        position: absolute;
+        right: 1em;
+        top: 1em;
+    }
+
+    .head__navigation.is-open{
+        display: block;
+    }
+
+    .navlist{
+        display: block;
+        max-width: 98vw;
+    }
+
+    .navlist__item{
+        display: block;
+
+    }
+
+    .navlist li+li {
+        margin-left: 0;
+        /* border-bottom: 1px solid #D6B9FF; */
+    }
+    .head__navigation>.navlist li{
+        padding: .5em 1em;
+        border-top: 1px solid #D6B9FF;
+    }
+
+    .head__navigation>.navlist:nth-last-child(2){
+        border-bottom: 1px solid #D6B9FF;
+    }
+
+    .head__navigation{
+        position: absolute;
+        border: 1px solid;
+        border-color: transparent transparent #D6B9FF #D6B9FF;
+        top: 4em;
+        margin-left: -1em;
+        background-color: white;
+        z-index: 100;
+    }
+    .head__navigation>.navlist>.navlist__item{
+        width: 98.25vw;
+    }
+
+    
+
+    .dropdown__drawer{
+        position: relative;
+        color: red;
+    }
+    .rectangle{
+        display: none;
+    }
+
+    .menu {
+       background-color: #F9F4FF;
+       border: 0;
+       border-radius: 0;
+       margin: 0;
+       width: calc(100% + 2em);
+       padding: .5em;
+       margin-left: -1em;
+       border-top: 1px solid #D6B9FF;
+       position: relative;
+       top: .5em;
+    }
+
+    .slider{
+        padding: 10% 15%;
+        width: 300px;
+        min-width: 500px;
+    }
+   
+    .slider .slick-dots{
+        left: 15em;
+    
+    }
+
+    .slider__item{
+        margin: 0 auto !important;
+        min-width: ;
+    }
+    .section-offer__container{
+        margin: 0;
+    }
+
+    .head__main-button{
+        margin: 2.5em;
+    }
+
+    .container{
+        margin-right: 1em;
+    }
+
+    .footer__subscribe-form{
+        margin-top: 1.2em;
+    }
+    
+    /* .offer{
+        margin: 0;
+    } */
 }

@@ -5,40 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" href="./clider.css">
     <link rel="stylesheet" href="./dropmenu.css">
+    <link rel="stylesheet" href="./main.css">
 
 </head>
 
 <body class="body">
 
     <header class="body__header header">
-        <!-- Тут наверное должен быть container, а не contain ? -->
-        <div class="header__contain contain">
+        <div class="header__contain container">
             <div class="header__logo logo">
                 <a class="logo__link" href="#indexhtml">
                     <img src="./images/logo.png" alt="">
                 </a>
             </div>
-            <nav class="head__navigation navigation">
-                <ul class="navigation__navlist navlist">
+            <button class="header__toggle toggle" id="toggle-menu">
+                свернуть меню
+            </button>
+            <nav class="head__navigation navigation" id="navigation">
+
+                <ul class="navigation__navlist navlist ">
                     <li class="navlist__item">
                         <a href="" class="navlist__link">
                             About
                         </a>
                     </li>
 
-                    <li class="navlist__item ">
+                    <li class="navlist__item navlist__item--dropdown ">
                         <div class="item__dropdown dropdown">
-                            <!-- Она должна появляться при hover'e -->
-                            <a class="navlist__link dropdown__toggle">Help</a>
+                            <a class="navlist__link navlist__link--dropdown">Help</a>
                             <div class="dropdown__drawer drawer">
-                                <ul class="drawer__menu menu">
-                                    <li><a href="">User guide</a></li>
-                                    <li><a href="">Contact support</a></li>
+                                <div class="drawer__menu menu">
+                                    <a href="" class="menu__item">User guide</a>
+                                    <a href="" class="menu__item">Contact support</a>
 
-                                </ul>
+                                </div>
                                 <div class="rectangle"></div>
                             </div>
                     
@@ -50,8 +52,9 @@
                         </a>
                     </li>
                 </ul>
+                <a href="" class="head__main-button main-button" id="main-button">Sign Up</a>
             </nav>
-            <a href="" class="head__main-button main-button">Sign Up</a>
+            
         </div>
     </header>
     <section class="body__section-offer section-offer">
@@ -109,7 +112,7 @@
     </section>
     <footer class="body__footer footer">
 
-        <div class="footer__contain contain">
+        <div class="footer__contain container">
             <div class="footer__logo logo logo--white">
                 <a class="logo__link" href="#indexhtml"><img src="./images/logo-white.png" alt=""></a>
             </div>
@@ -134,53 +137,13 @@
                 </button>
             </form>
         </div>
-
-
-        <!-- <img src="./images/logo.png" alt="logo" class="footer__logo logo logo--white"> -->
-
-
     </footer>
 
-    <!-- Скрипты нужно вынести в отдельный файл -->
-    <!-- Можно не тянуть всю папку со слайдером, а взять только стили и скрипты (slick.min.js, slick-theme.css, slick.css) -->
-    
-    <!-- script for dropmenu -->
-    <script>
-        (function(){
-            let toggle = document.querySelector('.dropdown__toggle')
-            toggle.addEventListener('click', function(event){
-                event.preventDefault
-            let dropdown = event.target.parentNode
-            dropdown.classList.toggle('is-open')
-            })
-        }())
-    </script>
+    <script type="text/javascript" src="./scripts/dropdownMenuScript.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <!-- <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> -->
-    <script type="text/javascript" src="./slick-1.8.1/slick/slick.min.js"></script>
-
-
-    <script type="text/javascript">
-        $('.slider').slick({
-            infinite: false,
-            slidesToShow: 1.8,
-            slidesToScroll: 2.2,
-            // arrows: true,
-            dots: true,
-            responsive: [
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 0.7,
-                        slidesToScroll: 1.1,
-                    }
-
-                }
-            ]
-        });
-    </script>
-
+    <script type="text/javascript" src="./scripts/slick.min.js"></script>
+    <script type="text/javascript" src="./scripts/sliderScript.js"></script>
+ 
 </body>
 
 </html>
